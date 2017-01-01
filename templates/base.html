@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+{% load i18n %}
+{% load static %}
+{% load ratings %}
+{% load tagging_tags %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Baitulilm - {% block title %}Page{% endblock %}</title>
+    <!-- CUSTOM STYLE -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- THEME TYPO -->
+    <link href="{% static 'css/themetypo.css' %}" rel="stylesheet">
+    <!-- BOOTSTRAP -->
+    <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+    <!-- COLOR FILE -->
+    <link href="{% static 'css/color.css' %}" rel="stylesheet">
+    <!-- FONT AWESOME -->
+    <link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet">
+    <!-- BX SLIDER -->
+    <link href="{% static 'css/jquery.bxslider.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/bootstrap-slider.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/widget.css' %}" rel="stylesheet">
+
+    <link href="{% static 'css/shortcode.css' %}" rel="stylesheet">
+    <!-- responsive -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <!-- Component -->
+    <link href="{% static 'js/dl-menu/component.css' %}" rel="stylesheet">
+    <!--Star Rating CSS-->
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <!-- Favivon.ico -->
+    <link rel="icon" type="image/png" href="{% static 'images/favicon.ico' %}">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<!--WRAPPER START-->
+<div class="wrapper">
+    <!--HEADER START-->
+        <!--include header-->
+        {% include 'common/header.html' %}
+    <!--HEADER END-->
+    <!--BANNER START-->
+        <!--include bannerbreadcrumbsearch-->
+        {% include 'common/bannerbreadcrumbsearch.html' %}
+    <!--BANNER END-->
+    <!--CONTENT START-->
+    <!--content goes here-->
+        {%block content %}
+
+        {% endblock %}
+    <!--CONTENT END-->
+    <!--newsletter or countup START-->
+        <!--include countup/newsletter-->
+        {% include 'common/newsletter.html' %}
+    <!--newsletter or countup END-->
+    <!--footer-->
+        <!--include footer-->
+        {% include 'common/footer.html' %}
+    <!--footer END-->
+</div>
+<!--WRAPPER END-->
+
+{% comment %}
+<!-- Modal -->
+    <!--include login modal-->
+    {% include 'common/loginmodal.html' %}
+<!--MODAL END-->
+{% endcomment %}
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.bxslider.min.js' %}"></script>
+<script src="{% static 'js/bootstrap-slider.js' %}"></script>
+<script src="{% static 'js/waypoints.min.js' %}"></script>
+<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+<script src="{% static 'js/dl-menu/modernizr.custom.js' %}"></script>
+<script src="{% static 'js/dl-menu/jquery.dlmenu.js' %}"></script>
+<script src="{% static 'js/classie.js' %}"></script>
+<script src="{% static 'js/functions.js' %}"></script>
+<script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+</body>
+</html>

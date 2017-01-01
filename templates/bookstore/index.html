@@ -1,0 +1,411 @@
+{% extends "baseindex.html" %}
+{% load staticfiles %}
+{% load i18n %}
+{% load static %}
+{% load ratings %}
+{% load tagging_tags %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <!--CONTENT START-->
+    <div class="kode-content">
+        <!--BOOK GUIDE SECTION START-->
+        <section>
+            <div class="container">
+                <!--SECTION CONTENT START-->
+                <div class="section-content margin-bottom-zero">
+                    <h2>WELCOME TO BOOK GUIDE</h2>
+                </div>
+                <!--SECTION CONTENT END-->
+                <div class="book-guide">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <img src="{% static 'images/about-img2.png' %}" alt="">
+                        </div>
+                        <div class="col-md-7">
+                            <p class="cap">PLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem
+                                ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                                ullamco laboris nisi ut aliquip ex ea commodo consequat. sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor
+                                sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                                nisi ut aliquip ex ea commodo consequat. </p>
+                            <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="kd-list2">
+                                        <li><p>Consectetur adipiscing elit</p></li>
+                                        <li><p>Sed do eiusmod tempor incididunt ut labore</p></li>
+                                        <li><p>Labore et dolore magna aliqua</p></li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="kd-list2">
+                                        <li><p>Consectetur adipiscing elit</p></li>
+                                        <li><p>Sed do eiusmod tempor incididunt ut labore</p></li>
+                                        <li><p>Labore et dolore magna aliqua</p></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--BOOK GUIDE SECTION END-->
+        <!--TOP SELLERS(NEW RELEASE) SECTION START-->
+        <section class="gray-bg kode-best-sellter-sec">
+            <div class="container">
+                <!--SECTION CONTENT START-->
+                <div class="section-content">
+                    <h2>Best <span>New</span> Releases</h2>
+                    <p>The Book Guide and the Book Library has one of the top sellers books with them. Those books which
+                        are sold with in few days and still available in our stock which you can get with us easily.</p>
+                </div>
+                <!--SECTION CONTENT END-->
+                <div class="row">
+                    <!--PRODUCT GRID START-->
+                    <div class="col-md-3">
+                        <div class="best-seller-pro">
+                            <figure>
+                                <img src="{% static 'images/book2.png' %}" alt="">
+                            </figure>
+                            <div class="kode-text">
+                                <h3>Broken Visions</h3>
+                            </div>
+                            <div class="kode-caption">
+                                <h3>Broken Visions Jessica</h3>
+                                <div class="rating">
+                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                </div>
+                                <p>Jessica Sorensen</p>
+                                <p class="price">$692.20</p>
+                                <a href="#" class="add-to-cart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--PRODUCT GRID END-->
+                    <!--PRODUCT GRID START-->
+                    <div class="col-md-3">
+                        <div class="best-seller-pro">
+                            <figure>
+                                <img src="{% static 'images/book6.png' %}" alt="">
+                            </figure>
+                            <div class="kode-text">
+                                <h3><a href="#">Bridget Jones</a></h3>
+                            </div>
+                            <div class="kode-caption">
+                                <h3>Mad About the Boy</h3>
+                                <div class="rating">
+                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                </div>
+                                <p>Helen Fielding</p>
+                                <p class="price">$77.70</p>
+                                <a href="#" class="add-to-cart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--PRODUCT GRID END-->
+                    <!--PRODUCT GRID START-->
+                    <div class="col-md-3">
+                        <div class="best-seller-pro">
+                            <figure>
+                                <img src="{% static 'images/book3.png' %}" alt="">
+                            </figure>
+                            <div class="kode-text">
+                                <h3><a href="#">Fairies in my FirePlace</a></h3>
+                            </div>
+                            <div class="kode-caption">
+                                <h3>Art History Mystery</h3>
+                                <div class="rating">
+                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                </div>
+                                <p>R.L Naquin</p>
+                                <p class="price">$334.50</p>
+                                <a href="#" class="add-to-cart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--PRODUCT GRID END-->
+                    <!--PRODUCT GRID START-->
+                    <div class="col-md-3">
+                        <div class="best-seller-pro">
+                            <figure>
+                                <img src="{% static 'images/book8.png' %}" alt="">
+                            </figure>
+                            <div class="kode-text">
+                                <h3><a href="#">Chrysalis</a></h3>
+                            </div>
+                            <div class="kode-caption">
+                                <h3>The Brave Girl</h3>
+                                <div class="rating">
+                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                </div>
+                                <p>William S.</p>
+                                <p class="price">$24.75</p>
+                                <a href="#" class="add-to-cart">Add To Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--PRODUCT GRID END-->
+                </div>
+            </div>
+        </section>
+        <!--TOP SELLERS SECTION END-->
+        <!--VIDEO SECTION START-->
+        <section class="kode-video-section">
+            <div class="container">
+                <h2>Play a video on Parallax</h2>
+                <a class="fa fa-play play" href="#"></a>
+                <h4>Title: Book Store</h4>
+                <p>Source: Youtube</p>
+            </div>
+        </section>
+        <!--VIDEO SECTION END-->
+        <!--NEWSLETTER START-->
+        <section class="kode-newsletters">
+            <div class="container">
+                <!--SECTION CONTENT START-->
+                <div class="section-content white">
+                    <h2>Subscribe to our Newsletter for the latest news.</h2>
+                    <p>Update your-self right now! By filling the form below, the lastest information about a thousand
+                        books
+                        will be sent directly to your email weekly.</p>
+                </div>
+                <!--SECTION CONTENT END-->
+                <div class="input-container">
+                    <input type="text" placeholder="Subscribe us">
+                    <button>Subscribe</button>
+                </div>
+            </div>
+        </section>
+        <!--NEWSLETTER ENDS-->
+        <!--TOP AUTHORS START-->
+        <section class="kode-top-author gray-bg">
+            <div class="container">
+                <!--SECTION HEADING START-->
+                <div class="section-content">
+                    <h2>The Top Writers of 2015</h2>
+                    <p>The Top Authors Books are available and are presented in the Book Guide and in Books Library
+                        where every user can purchase the books easily. The top writers and authors books are also
+                        published here. Dont miss the change of getting those precious books from here.</p>
+                </div>
+                <!--SECTION HEADING END-->
+                <div class="row">
+                    <!--AUTHOR LIST START-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="kode-author kode-author-2">
+                            <a href="#"><img alt="" src="{% static 'images/author2.png' %}"></a>
+                            <div class="kode-caption">
+                                <h4>christina noto</h4>
+                                <p>Co-Founder</p>
+                                <div class="social-icon">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--AUTHOR LIST END-->
+                    <!--AUTHOR LIST START-->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="kode-author kode-author-2">
+                            <a href="#"><img alt="" src="{% static 'images/author.png' %}"></a>
+                            <div class="kode-caption">
+                                <h4>Allen Jack</h4>
+                                <p>Co-Founder</p>
+                                <div class="social-icon">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--AUTHOR LIST END-->
+                    <!--AUTHOR LIST START-->
+                    <div class="col-md-4">
+                        <div class="kode-author kode-author-2">
+                            <a href="#"><img alt="" src="{% static 'images/author3.png' %}"></a>
+                            <div class="kode-caption">
+                                <h4>Sarah Marlin</h4>
+                                <p>Co-Founder</p>
+                                <div class="social-icon">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--AUTHOR LIST END-->
+                </div>
+            </div>
+        </section>
+        <!--TOP AUTHORS END-->
+        <!--FROM THE BLOG SECTION START-->
+        <section class="kode-blog-section">
+            <div class="container">
+                <!--SECTION HEADING START-->
+                <div class="section-content">
+                    <h2>The Latest From <span>IsLibrary</span> Blog</h2>
+                    <p>We’re breaking new ground in online bookselling. We believe that education and access to books
+                        are basic human rights. That's why books sold on BetterWorldBooks.com help fund high-impact
+                        literacy projects in the United States and around the world.</p>
+                </div>
+                <!--SECTION HEADING END-->
+                <div class="row">
+                    <!--BLOG LIST START-->
+                    <div class="col-md-6">
+                        <div class="kode-blog-list">
+                            <div class="kode-thumb">
+                                <a href="#"><img src="{% static 'images/blog.jpg' %}" alt=""></a>
+                                <div class="blog-date">
+                                    <p>15</p>
+                                    <span>August</span>
+                                </div>
+                            </div>
+                            <div class="kode-text">
+                                <p>Posted by Cartel</p>
+                                <h2>Book Lovers</h2>
+                                <p>The Book Lovers is a research project on the phenomenon of artist's novels avaible
+                                    today.</p>
+                                <a href="#" class="more">SEE MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--BLOG LIST END-->
+                    <!--BLOG LIST START-->
+                    <div class="col-md-6">
+                        <div class="kode-blog-list">
+                            <div class="kode-thumb">
+                                <a href="#"><img src="{% static 'images/blog2.jpg' %}" alt=""></a>
+                                <div class="blog-date">
+                                    <p>10</p>
+                                    <span>August</span>
+                                </div>
+                            </div>
+                            <div class="kode-text">
+                                <p>Posted by Jack Howard</p>
+                                <h2>The Indie View</h2>
+                                <p>The Indie View is the most popular book of the all india times written by a famous
+                                    author.</p>
+                                <a href="#" class="more">SEE MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--BLOG LIST END-->
+                    <!--BLOG LIST START-->
+                    <div class="col-md-6">
+                        <div class="kode-blog-list">
+                            <div class="kode-thumb">
+                                <a href="#"><img src="{% static 'images/blog3.jpg' %}" alt=""></a>
+                                <div class="blog-date">
+                                    <p>20</p>
+                                    <span>August</span>
+                                </div>
+                            </div>
+                            <div class="kode-text">
+                                <p>Posted by Jhon Deo</p>
+                                <h2>Modern E-Books</h2>
+                                <p>Modern Ebbooks selling is the most advance and popular way of sellings books online
+                                    today.</p>
+                                <a href="#" class="more">SEE MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--BLOG LIST END-->
+                    <!--BLOG LIST START-->
+                    <div class="col-md-6">
+                        <div class="kode-blog-list">
+                            <div class="kode-thumb">
+                                <a href="#"><img src="{% static 'images/blog4.jpg' %}" alt=""></a>
+                                <div class="blog-date">
+                                    <p>15</p>
+                                    <span>August</span>
+                                </div>
+                            </div>
+                            <div class="kode-text">
+                                <p>Posted by Julia</p>
+                                <h2>Learn With Joy</h2>
+                                <p>Now learning is made very easy to learn with joy , E learning is made very easily and
+                                    comfortable.</p>
+                                <a href="#" class="more">SEE MORE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!--BLOG LIST END-->
+                </div>
+            </div>
+        </section>
+        <!--FROM THE BLOG SECTION END-->
+        <!--TESTIMONIALS START-->
+        <section class="testimonial-section">
+            <div class="container">
+                <div class="kode-testimonials-4">
+                    <h2>Words from our Community</h2>
+                    <ul class="bxslider2">
+                        <li>
+                            <div class="client-name">
+                                <div class="kode-thumb"><img src="{% static 'images/testimonials-img5.png' %}" alt=""></div>
+                                <h2>Anna Doe</h2>
+                                <p class="designation">Marketing Manager</p>
+                            </div>
+                            <div class="kode-text">
+                                <p>“Thank you for all your help and assistance over the years! I would have no
+                                    hesitation in recommending you to my friends.”</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="client-name">
+                                <div class="kode-thumb"><img src="{% static 'images/testimonials-img2.png' %}" alt=""></div>
+                                <h2>Julia Burns</h2>
+                                <p class="designation">The Writer</p>
+                            </div>
+                            <div class="kode-text">
+                                <p>“Now two or three times a year (especially after Christmas) my family shops on the
+                                    Book Library – it’s a tradition!”</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="client-name">
+                                <div class="kode-thumb"><img src="{% static 'images/testimonials-img3.png' %}" alt=""></div>
+                                <h2>Sarah Jefferson</h2>
+                                <p class="designation">Librarian Manager</p>
+                            </div>
+                            <div class="kode-text">
+                                <p>“I found what I needed and the prices are super low, and the books arrived in a
+                                    timely manner. Keep up the great work!”</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--TESTIMONIALS END-->
+    </div>
+    <!--CONTENT END-->
+{% endblock %}

@@ -1,0 +1,343 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block title %}
+    News and Events
+{% endblock %}
+
+{% block content %}
+    <!--CONTENT START-->
+    <div class="kode-content padding-tb-50">
+        <div class="container">
+            <div class="row">
+                <!--SIDEBAR START-->
+                <div class="col-md-3 sidebar hide-on-med-down">
+                    <!--SEARCH WIDGET START-->
+                    <div class="widget widget-search">
+                        <h2>Search</h2>
+                        <div class="input-container">
+                            <input type="text" placeholder="Enter Keyword">
+                            <i class="fa fa-search"></i>
+                        </div>
+                    </div>
+                    <!--SEARCH WIDGET END-->
+                    <!--CATEGORY WIDGET START-->
+                    <div class="widget widget-categories">
+                        <h2><a href="blog-category.html">Categories</a></h2>
+                        <ul>
+                            <li><a href="blog-category.html">Photoshop</a></li>
+                            <li><a href="#">web/Graphic Design</a></li>
+                            <li><a href="#">Mobile Development</a></li>
+                            <li><a href="#">Video Editing</a></li>
+                            <li><a href="#">Photoshop</a></li>
+                            <li><a href="#">web/Graphic Design</a></li>
+                            <li><a href="#">Mobile Development</a></li>
+                            <li><a href="#">Video Editing</a></li>
+                        </ul>
+                    </div>
+                    <!--CATEGORY WIDGET END-->
+                    <!--SUBSCRIBE WIDGET START-->
+                    <div class="widget widget-newletter">
+                        <h2>Stay Tuned</h2>
+                        <div class="input-container">
+                            <input type="text" placeholder="Subscribe Us">
+                            <button>Submit</button>
+                        </div>
+                        <div class="social-icon">
+                            <ul>
+                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!--SUBSCRIBE WIDGET START-->
+                    <!--LATEST POST START-->
+                    <div class="widget widget-latest-post">
+                        <h5>Lates Posts</h5>
+                        <ul>
+                            <li>
+                                <div class="kode-thumb">
+                                    <a href="#"><img src="images/post-avaitar.png" alt=""></a>
+                                </div>
+                                <div class="kode-text">
+                                    <h4>Lorem ipsum dolorsit amet adipiscing </h4>
+                                    <p>25 December, 2015</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="kode-thumb">
+                                    <a href="#"><img src="images/post-avaitar.png" alt=""></a>
+                                </div>
+                                <div class="kode-text">
+                                    <h4>Lorem ipsum dolorsit amet adipiscing </h4>
+                                    <p>25 December, 2015</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="kode-thumb">
+                                    <a href="#"><img src="images/post-avaitar.png" alt=""></a>
+                                </div>
+                                <div class="kode-text">
+                                    <h4>Lorem ipsum dolorsit amet adipiscing </h4>
+                                    <p>25 December, 2015</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--LATEST POST END-->
+                    <!--INSTAGRAM WIDGET START-->
+                    <div class="widget widget-instagram">
+                        <h2>Instagram</h2>
+                        <ul>
+                            <li><a href="#"><img src="images/instagram1.png" alt=""></a></li>
+                            <li><a href="#"><img src="images/instagram2.png" alt=""></a></li>
+                            <li><a href="#"><img src="images/instagram3.png" alt=""></a></li>
+                            <li><a href="#"><img src="images/instagram4.png" alt=""></a></li>
+                            <li><a href="#"><img src="images/instagram1.png" alt=""></a></li>
+                            <li><a href="#"><img src="images/instagram2.png" alt=""></a></li>
+                            <li><a href="#"><img src="images/instagram3.png" alt=""></a></li>
+                            <li><a href="#"><img src="images/instagram4.png" alt=""></a></li>
+                            <li><a href="#"><img src="images/instagram1.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <!--INSTAGRAM WIDGET END-->
+                    <!--ARCHIVE WIDGET START-->
+                    <div class="widget widget-archive">
+                        <h2>Archive</h2>
+                        <ul>
+                            <li><a href="#">Photoshop</a></li>
+                            <li><a href="#">web/Graphic Design</a></li>
+                            <li><a href="#">Mobile Development</a></li>
+                            <li><a href="#">Video Editing</a></li>
+                            <li><a href="#">Photoshop</a></li>
+                            <li><a href="#">web/Graphic Design</a></li>
+                            <li><a href="#">Mobile Development</a></li>
+                            <li><a href="#">Video Editing</a></li>
+                        </ul>
+                    </div>
+                    <!--ARCHIVE WIDGET END-->
+                    <!--ADVERTIZMENT WIDGET START-->
+                    <div class="widget widget-advertizement">
+                        <h2>Advertizement</h2>
+                        <div class="kode-thumb">
+                            <a href="#"><img src="images/add.png" alt=""></a>
+                        </div>
+                    </div>
+                    <!--ADVERTIZMENT WIDGET END-->
+                </div>
+                <!--SIDEBAR END-->
+                <div class="col-md-9">
+                    <!--BLOG FULL LIST START-->
+                    <div class="kode-blog-full">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2">
+                                <div class="meta-date">
+                                    <div class="writer">
+                                        <div class="kode-thumb">
+                                            <a href="#"><img src="images/writer2.png" alt=""></a>
+                                        </div>
+                                        <div class="kode-text">
+                                            <p>Written By</p>
+                                            <h4>Belly</h4>
+                                        </div>
+                                    </div>
+                                    <div class="kode-date">
+                                        <h2>26
+                                            <small>Th</small>
+                                        </h2>
+                                        <p>august 2015</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-10 col-sm-10">
+                                <div class="kode-thumb">
+                                    <a href="#"><img src="images/blog-img5.png" alt=""></a>
+                                    <div class="blog-btns">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="kode-text">
+                                    <h2>NerdCon Stories, Day Two</h2>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                        doloremque laudantium, totam rem aperiam.ipsam voluptatem quia voluptas sit
+                                        aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+                                        ratione voluptatem sequi nesciunt.</p>
+                                    <a href="blog-detail.html" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--BLOG FULL LIST END-->
+                    <!--BLOG FULL LIST START-->
+                    <div class="kode-blog-full">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2">
+                                <div class="meta-date">
+                                    <div class="writer">
+                                        <div class="kode-thumb">
+                                            <a href="#"><img src="images/writer3.png" alt=""></a>
+                                        </div>
+                                        <div class="kode-text">
+                                            <p>Written By</p>
+                                            <h4>Jhony</h4>
+                                        </div>
+                                    </div>
+                                    <div class="kode-date">
+                                        <h2>26
+                                            <small>Th</small>
+                                        </h2>
+                                        <p>august 2015</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-10 col-sm-10">
+                                <div class="kode-thumb">
+                                    <a href="#"><img src="images/blog-img8.png" alt=""></a>
+                                    <div class="blog-btns">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="kode-text">
+                                    <h2>October Reading is very easy now.</h2>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                        doloremque laudantium, totam rem aperiam.ipsam voluptatem quia voluptas sit
+                                        aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+                                        ratione voluptatem sequi nesciunt.</p>
+                                    <a href="#" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--BLOG FULL LIST END-->
+                    <!--BLOG FULL LIST START-->
+                    <div class="kode-blog-full">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2">
+                                <div class="meta-date">
+                                    <div class="writer">
+                                        <div class="kode-thumb">
+                                            <a href="#"><img src="images/writer.png" alt=""></a>
+                                        </div>
+                                        <div class="kode-text">
+                                            <p>Written By</p>
+                                            <h4>James</h4>
+                                        </div>
+                                    </div>
+                                    <div class="kode-date">
+                                        <h2>26
+                                            <small>Th</small>
+                                        </h2>
+                                        <p>august 2015</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-10 col-sm-10">
+                                <div class="kode-thumb">
+                                    <a href="#"><img src="images/blog-img6.png" alt=""></a>
+                                    <div class="blog-btns">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="kode-text">
+                                    <h2>Just Trying to Be Part of the Herd.</h2>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                        doloremque laudantium, totam rem aperiam.ipsam voluptatem quia voluptas sit
+                                        aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+                                        ratione voluptatem sequi nesciunt.</p>
+                                    <a href="#" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--BLOG FULL LIST END-->
+                    <!--BLOG FULL LIST START-->
+                    <div class="kode-blog-full">
+                        <div class="row">
+                            <div class="col-md-2 col-sm-2">
+                                <div class="meta-date">
+                                    <div class="writer">
+                                        <div class="kode-thumb">
+                                            <a href="#"><img src="images/writer4.png" alt=""></a>
+                                        </div>
+                                        <div class="kode-text">
+                                            <p>Written By</p>
+                                            <h4>Backi</h4>
+                                        </div>
+                                    </div>
+                                    <div class="kode-date">
+                                        <h2>26
+                                            <small>Th</small>
+                                        </h2>
+                                        <p>august 2015</p>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="col-md-10 col-sm-10">
+                                <div class="kode-thumb">
+                                    <a href="#"><img src="images/blog-img7.png" alt=""></a>
+                                    <div class="blog-btns">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-search"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-share-alt"></i></a></li>
+                                            <li><a href="#"><i class="fa fa-heart-o"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="kode-text">
+                                    <h2>Depression This is Autumn?</h2>
+                                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                                        doloremque laudantium, totam rem aperiam.ipsam voluptatem quia voluptas sit
+                                        aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui
+                                        ratione voluptatem sequi nesciunt.</p>
+                                    <a href="#" class="read-more">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--BLOG FULL LIST END-->
+                    <!--PAGINATION START-->
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!--PAGINATION END-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--CONTENT END-->
+{% endblock %}
