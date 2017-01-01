@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^publisher/', bookstore_views.view_book_publisher, name='bookpublishers'),
     url(r'^authors/', bookstore_views.view_book_author, name='bookauthors'),
     url(r'^languages/', bookstore_views.view_book_language, name='booklanguages'),
+    url(r'^search/', bookstore_views.search, name='searchresult'),
     url(r'^ratings', include('star_ratings.urls', namespace='ratings', app_name='ratings')),
 ]
