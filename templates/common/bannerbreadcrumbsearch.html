@@ -3,7 +3,7 @@
 {% load static %}
 <div class="kode-inner-banner">
     <div class="kode-page-heading">
-        <h2>Books and Media</h2>
+        <h2>Baitul Ilm</h2>
         <ol class="breadcrumb">
             <li><a href="#">Home</a></li>
             <li><a href="/bookstore">Books and Media</a></li>
@@ -16,19 +16,14 @@
                 <div class="col-md-2">
                     <h2>Search<br> Your Books</h2>
                 </div>
-                <div class="col-md-6">
-                    <input type="text" placeholder="Enter Your Title">
-                </div>
-                <div class="col-md-2">
-                    <select>
-                        <option value="all">All Categories</option>
-                        <option value="fiqh">Fiqh</option>
-                        <option value="seerah">Seerah</option>
-                    </select>
-                </div>
-                <div class="col-md-2">
-                    <button>Search</button>
-                </div>
+                <form method="get" action="/search/">
+                    <div class="col-md-7">
+                        <input name="q" id="id_q" type="search" placeholder="Enter Your Title">
+                    </div>
+                    <div class="col-md-3">
+                        <button value="Submit" type="submit">Search</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

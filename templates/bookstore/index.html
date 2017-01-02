@@ -77,90 +77,32 @@
                 </div>
                 <!--SECTION CONTENT END-->
                 <div class="row">
-                    <!--PRODUCT GRID START-->
-                    <div class="col-md-3">
+                    <!--TOP SELLER BOOKS GRID START-->
+                    {% for new_book_release in new_book_releases %}
+                        <div class="col-md-3">
                         <div class="best-seller-pro">
                             <figure>
-                                <img src="{% static 'images/book2.png' %}" alt="">
+                                <img src="{{ MEDIA_URL }}{{ new_book_release.cover_image }}" alt="">
                             </figure>
                             <div class="kode-text">
-                                <h3>Broken Visions</h3>
+                                <h3>{{ new_book_release.title }}</h3>
                             </div>
                             <div class="kode-caption">
-                                <h3>Broken Visions Jessica</h3>
+                                <h3>{{ new_book_release.title }}</h3>
                                 <div class="rating">
                                     <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
                                 </div>
-                                <p>Jessica Sorensen</p>
-                                <p class="price">$692.20</p>
-                                <a href="#" class="add-to-cart">Add To Cart</a>
+                                {% for author in new_book_release.authors.all %}
+                                    <p>{{ author.first_name }} {{ author.last_name }}</p>
+                                {% endfor %}
+                                    <p class="price">${{ new_book_release.price }}</p>
+                                <a href="/bookstore/book/{{ new_book_release.slug }}" class="add-to-cart">Details</a>
                             </div>
                         </div>
                     </div>
-                    <!--PRODUCT GRID END-->
-                    <!--PRODUCT GRID START-->
-                    <div class="col-md-3">
-                        <div class="best-seller-pro">
-                            <figure>
-                                <img src="{% static 'images/book6.png' %}" alt="">
-                            </figure>
-                            <div class="kode-text">
-                                <h3><a href="#">Bridget Jones</a></h3>
-                            </div>
-                            <div class="kode-caption">
-                                <h3>Mad About the Boy</h3>
-                                <div class="rating">
-                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                </div>
-                                <p>Helen Fielding</p>
-                                <p class="price">$77.70</p>
-                                <a href="#" class="add-to-cart">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--PRODUCT GRID END-->
-                    <!--PRODUCT GRID START-->
-                    <div class="col-md-3">
-                        <div class="best-seller-pro">
-                            <figure>
-                                <img src="{% static 'images/book3.png' %}" alt="">
-                            </figure>
-                            <div class="kode-text">
-                                <h3><a href="#">Fairies in my FirePlace</a></h3>
-                            </div>
-                            <div class="kode-caption">
-                                <h3>Art History Mystery</h3>
-                                <div class="rating">
-                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                </div>
-                                <p>R.L Naquin</p>
-                                <p class="price">$334.50</p>
-                                <a href="#" class="add-to-cart">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--PRODUCT GRID END-->
-                    <!--PRODUCT GRID START-->
-                    <div class="col-md-3">
-                        <div class="best-seller-pro">
-                            <figure>
-                                <img src="{% static 'images/book8.png' %}" alt="">
-                            </figure>
-                            <div class="kode-text">
-                                <h3><a href="#">Chrysalis</a></h3>
-                            </div>
-                            <div class="kode-caption">
-                                <h3>The Brave Girl</h3>
-                                <div class="rating">
-                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                </div>
-                                <p>William S.</p>
-                                <p class="price">$24.75</p>
-                                <a href="#" class="add-to-cart">Add To Cart</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--PRODUCT GRID END-->
+                    {% endfor %}
+                    <!--TOP SELLER BOOKS GRID END black stars html encode &#x2605 &#9733-->
+
                 </div>
             </div>
         </section>
@@ -169,9 +111,9 @@
         <section class="kode-video-section">
             <div class="container">
                 <h2>Play a video on Parallax</h2>
-                <a class="fa fa-play play" href="#"></a>
-                <h4>Title: Book Store</h4>
-                <p>Source: Youtube</p>
+                <a class="fa fa-play play" href="{% static 'images/video.mp4' %}"></a>
+                <h4>Title: Baitulilm Book Store</h4>
+                <p>Source: Baitulilm.com</p>
             </div>
         </section>
         <!--VIDEO SECTION END-->
@@ -206,15 +148,16 @@
                 <!--SECTION HEADING END-->
                 <div class="row">
                     <!--AUTHOR LIST START-->
-                    <div class="col-md-4 col-sm-6">
+                    {% for top_writer in top_writers %}
+                        <div class="col-md-3 col-sm-6">
                         <div class="kode-author kode-author-2">
-                            <a href="#"><img alt="" src="{% static 'images/author2.png' %}"></a>
+                            <a href="#"><img alt="" src="{{ MEDIA_URL }}{{ top_writer.image }}"></a>
                             <div class="kode-caption">
-                                <h4>christina noto</h4>
-                                <p>Co-Founder</p>
+                                <h4>{{ top_writer.first_name }} {{ top_writer.last_name }}</h4>
+                                <p>{{ top_writer.nationality }}</p>
                                 <div class="social-icon">
                                     <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="http://facebook.com/{{ top_writer.fb_username }}"><i class="fa fa-facebook"></i></a></li>
                                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
                                         <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
                                         <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
@@ -223,44 +166,7 @@
                             </div>
                         </div>
                     </div>
-                    <!--AUTHOR LIST END-->
-                    <!--AUTHOR LIST START-->
-                    <div class="col-md-4 col-sm-6">
-                        <div class="kode-author kode-author-2">
-                            <a href="#"><img alt="" src="{% static 'images/author.png' %}"></a>
-                            <div class="kode-caption">
-                                <h4>Allen Jack</h4>
-                                <p>Co-Founder</p>
-                                <div class="social-icon">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--AUTHOR LIST END-->
-                    <!--AUTHOR LIST START-->
-                    <div class="col-md-4">
-                        <div class="kode-author kode-author-2">
-                            <a href="#"><img alt="" src="{% static 'images/author3.png' %}"></a>
-                            <div class="kode-caption">
-                                <h4>Sarah Marlin</h4>
-                                <p>Co-Founder</p>
-                                <div class="social-icon">
-                                    <ul>
-                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                     <!--AUTHOR LIST END-->
                 </div>
             </div>
@@ -271,7 +177,7 @@
             <div class="container">
                 <!--SECTION HEADING START-->
                 <div class="section-content">
-                    <h2>The Latest From <span>IsLibrary</span> Blog</h2>
+                    <h2>The Latest From <span>Baitulilm</span> Blog</h2>
                     <p>We’re breaking new ground in online bookselling. We believe that education and access to books
                         are basic human rights. That's why books sold on BetterWorldBooks.com help fund high-impact
                         literacy projects in the United States and around the world.</p>

@@ -21,9 +21,9 @@
     </div>
     <!--Search Overlay Box Starts -->
     <div id="kode_search_box" class="kode_search_box">
-        <form class="kode_search_box-form">
-            <input class="kode_search_box-input" type="search" placeholder="Search by Keyword..."/>
-            <button class="kode_search_box-submit" type="submit">Search</button>
+        <form method="get" action="/search/" class="kode_search_box-form">
+            <input class="kode_search_box-input" name="q" id="id_q" type="search" placeholder="Search by Keyword..."/>
+            <button class="kode_search_box-submit" value="Submit" type="submit">Search</button>
         </form>
         <span class="kode_search_box-close"></span>
     </div>

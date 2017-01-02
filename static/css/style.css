@@ -443,8 +443,9 @@ header {
     margin: 20px 0px 0px 0px;
 }
 
-.kode-banner .input-container input[type="text"] {
-    background-color: rgba(0, 0, 0, 0.6);
+.kode-banner .input-container input[type="search"] {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: #ffffff !important;
     height: 50px;
     border-radius: 30px;
     width: 580px;
@@ -5424,7 +5425,7 @@ section.lib-call-to-action .container {
 
 .page-404 span {
     font-size: 48px;
-    content: #fff;
+    /*content: #fff;*/
     font-weight: bold;
     background-color: #fff;
     margin: -60px 0px 0px 0px;
@@ -6669,7 +6670,7 @@ nav {
     margin: 0px;
     font-size: 30px;
     font-weight: bold;
-    line-height: none;
+    line-height: 0; /* none - change back if blog look different*/
 }
 
 .kode-blog-list2 .blog-date span {

@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.db.models import permalink
 from django.utils import timezone
 from taggit.managers import TaggableManager
+from django.contrib.contenttypes.fields import GenericRelation
+from star_ratings.models import Rating
 
 
 # Create your models here.
@@ -90,7 +92,7 @@ class Book(models.Model):
     # id = models.IntegerField(primary_key=True)
     title = models.CharField(max_length=150, unique=True, verbose_name='Book Title')
     slug = models.SlugField(max_length=150, unique=True, verbose_name='Book URL')
-    intro = models.CharField(max_length=250, verbose_name='Book Introductory Highlight', blank=True)
+    intro = models.CharField(max_length=120, verbose_name='Book Introductory Highlight', blank=True)
     description = models.TextField(verbose_name='Book Detailed Description', blank=True)
     authors = models.ManyToManyField(Author)
     publisher = models.ForeignKey(Publisher)
@@ -107,6 +109,7 @@ class Book(models.Model):
     price = models.DecimalField(verbose_name='Book Price',
                                 max_digits=6, decimal_places=2,
                                 help_text='book price in dollars e.g $0.00')
+    is_public = models.BooleanField(default=False)
     tags = TaggableManager()
     upload = models.FileField(verbose_name='Book File Upload',
                               upload_to='books/%Y/%m/%d/',
@@ -114,6 +117,7 @@ class Book(models.Model):
     uploaded_on = models.DateTimeField(auto_now_add=True,
                                        verbose_name='Date of Book Upload',
                                        help_text='Day and time the book was uploaded')
+    ratings = GenericRelation(Rating, related_query_name='books')
 
     class Meta:
         ordering = ['title']  # , '-uploaded_on'

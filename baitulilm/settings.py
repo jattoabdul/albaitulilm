@@ -103,7 +103,7 @@ DATABASES = {
 # cache settings
 CACHES = {
     'default': {
-        'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',  # 'django.core.cache.backends.dummy.DummyCache',
     }
 }
 
@@ -182,8 +182,8 @@ EMAIL_HOST_PASSWORD = 'jasabs93'
 STAR_RATINGS_RERATE = False
 # To enable anonymous rating
 STAR_RATINGS_ANONYMOUS = True
-# STAR_RATINGS_STAR_HEIGHT = 32
-# STAR_RATINGS_STAR_WIDTH = 32
+STAR_RATINGS_STAR_HEIGHT = 32
+STAR_RATINGS_STAR_WIDTH = 32
 
 
 # django-tagging config

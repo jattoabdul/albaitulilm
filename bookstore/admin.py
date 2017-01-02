@@ -41,7 +41,7 @@ class BookAdmin(admin.ModelAdmin):
     }
 
     def save_model(self, request, obj, form, change):
-        obj.author = request.user
+        obj.uploaded_by = request.user
         obj.save()
 
 

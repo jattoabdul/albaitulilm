@@ -4,6 +4,7 @@
 
 # IntelliJ project files
 .idea
+.idea/
 out
 gen
 .gitignore
@@ -67,3 +68,4 @@ baitulilm/static/star-ratings/
 baitulilm/static/zinnia/
 bookstore/__pycache__/
 bookstore/migrations/__pycache__/
+

@@ -1,0 +1,120 @@
+{% load staticfiles %}
+{% load static %}
+{% load i18n %}
+{% load ratings %}
+{% load tagging_tags %}
+
+<!--SIDEBAR START-->
+<div class="col-md-3 sidebar hide-on-med-down">
+                    <!--SEARCH WIDGET START-->
+                    <div class="widget widget-search">
+                        <h2>Search</h2>
+                        <div class="input-container">
+                            <input name="q" id="id_q" type="search" placeholder="Enter Keyword">
+                            <i class="fa fa-search" ></i>
+                            <!--<button value="Submit" type="submit">Search</button>-->
+                        </div>
+                    </div>
+                    <!--SEARCH WIDGET END-->
+                    <!--PRICE FILTER WIDGET(YEAR OF PUBLICATION FILTER WIDGET) START-->
+                    <div class="widget widget-price-filter">
+                        <h2>Filter by Pub Year</h2>
+                        <b>1970</b>
+                        <b class="pull-right">2017</b>
+                        <input id="ex2" type="text" class="span2" value="" data-slider-min="1970" data-slider-max="2017"
+                               data-slider-step="1" data-slider-value="[1970,1990]"/>
+                        <a href="#" class="filter">Filter</a>
+                    </div>
+                    <!--PRICE FILTER WIDGET(YEAR OF PUBLICATION FILTER WIDGET) END-->
+
+                    <!--MOST RECENT(NEW ARRIVAL) WIDGET START #done-->
+                    <div class="widget widget-new-arrival">
+                        <h2>MOST RECENT</h2>
+                        <ul class="bxslider">
+                            {% if most_recent_books %}
+                                <li>
+                                {% for most_recent_book in most_recent_books %}
+                                    {% if most_recent_book.is_public == True %}
+                                    <div class="new-arrival">
+                                        <div class="kode-thumb">
+                                            <a href="/book/{{ most_recent_book.slug }}">
+                                            <img src="{{ MEDIA_URL }}{{ most_recent_book.cover_image }}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="kode-text">
+                                            <h3>{{ most_recent_book.title }}</h3>
+                                            <p>{{ most_recent_book.intro }}</p>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                                </li>
+                            {% endif %}
+                            {% if most_recent_books_2 %}
+                                <li>
+                                {% for most_recent_book_2 in most_recent_books_2 %}
+                                    {% if most_recent_book_2.is_public == True %}
+                                    <div class="new-arrival">
+                                        <div class="kode-thumb">
+                                            <a href="/book/{{ most_recent_book_2.slug }}">
+                                            <img src="{{ MEDIA_URL }}{{ most_recent_book_2.cover_image }}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="kode-text">
+                                            <h3>{{ most_recent_book_2.title }}</h3>
+                                            <p>{{ most_recent_book_2.intro }}</p>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <!--MOST RECENT(NEW ARRIVAL) WIDGET END-->
+
+                    <!--CATEGORY WIDGET START #done-->
+                    <div class="widget widget-categories">
+                        <h2>Categories</h2>
+                        {% if categories %}
+                        <ul>
+                            {% for category in categories %}
+                                <li><a href="#">{{ category.title }}</a></li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <ul>
+                            <li><a href="#">Empty Category</a></li>
+                        </ul>
+                        {% endif %}
+                    </div>
+                    <!--CATEGORY WIDGET END-->
+
+                    <!--MOST DOWNLOADED WIDGET START #done-->
+                    <div class="widget widget-new-arrival">
+                        <h2>Most Downloaded</h2>
+                        <ul>
+                            {% if most_downloaded_books %}
+                            <li>
+                                {% for most_downloaded_book in most_downloaded_books %}
+                                   {% if most_downloaded_book.is_public == True %}
+                                   <div class="new-arrival">
+                                        <div class="kode-thumb">
+                                            <a href="/book/{{ most_downloaded_book.slug }}">
+                                                <img src="{{ MEDIA_URL }}{{ most_downloaded_book.cover_image }}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="kode-text">
+                                            <h3>{{ most_downloaded_book.title }}</h3>
+                                            <p>This book has {{ most_downloaded_book.download_no }} Downloads!!!</p>
+                                        </div>
+                                    </div>
+                                   {% endif %}
+                                {% endfor %}
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <!--MOST DOWNLOADED WIDGET END-->
+                </div>
+<!--SIDEBAR END-->

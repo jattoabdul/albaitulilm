@@ -1,45 +1,46 @@
 {% load staticfiles %}
 {% load i18n %}
 {% load static %}
+
 <div class="kode-banner">
     <ul class="bxslider">
         <li>
             <img src="{% static 'images/banner-1.png' %}" alt="">
             <div class="kode-caption">
-                <h2>book guide</h2>
-                <h5>online books store</h5>
+                <h2>BaitulIlm</h2>
+                <h5>Best Islamic Online Books Library</h5>
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor<br>emque
                     laudantium, totam rem aperiam.ipsam voluptatem.</p>
-                <div class="input-container">
-                    <input type="text" placeholder="Enter Your Book Title Here">
-                    <button><i class="fa fa-search"></i></button>
-                </div>
+                <form method="get" action="/search/" class="input-container">
+                    <input name="q" id="id_q" type="search" placeholder="Enter Your Book Title Here">
+                    <button value="Submit" type="submit"><i class="fa fa-search"></i></button>
+                </form>
             </div>
         </li>
         <li>
             <img src="{% static 'images/banner-2.png' %}" alt="">
             <div class="kode-caption">
-                <h2>book Reading</h2>
-                <h5>Best Book Available</h5>
+                <h2>Al-BaitulIlm</h2>
+                <h5>Best Books Available for Free</h5>
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor<br>emque
                     laudantium, totam rem aperiam.ipsam voluptatem.</p>
-                <div class="input-container">
-                    <input type="text" placeholder="Enter Your Book Title Here">
-                    <button><i class="fa fa-search"></i></button>
-                </div>
+                <form method="get" action="/search/" class="input-container">
+                    <input name="q" id="id_q" type="search" placeholder="Enter Your Book Title Here">
+                    <button value="Submit" type="submit"><i class="fa fa-search"></i></button>
+                </form>
             </div>
         </li>
         <li>
             <img src="{% static 'images/banner-3.png' %}" alt="">
             <div class="kode-caption">
-                <h2>Book Store</h2>
-                <h5>Books Guiders</h5>
+                <h2>Baitul-Ilm</h2>
+                <h5>Great Authors and Publishers</h5>
                 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium dolor<br>emque
                     laudantium, totam rem aperiam.ipsam voluptatem.</p>
-                <div class="input-container">
-                    <input type="text" placeholder="Enter Your Book Title Here">
-                    <button><i class="fa fa-search"></i></button>
-                </div>
+                <form method="get" action="/search/" class="input-container">
+                    <input name="q" id="id_q" type="search" placeholder="Enter Your Book Title Here">
+                    <button value="Submit" type="submit"><i class="fa fa-search"></i></button>
+                </form>
             </div>
         </li>
     </ul>

@@ -5,8 +5,12 @@
 
 
 {% block content %}
-    <h1>Search Results</h1>
+    <div class="">
+    <h1>You searched for "{{ query_string }}" and the results are listed below.</h1>
     <ul>
-    <li>search item1 result</li>
+        {% for found_entry in found_entries %}
+            <li><a href="/bookstore/book/{{ found_entry.slug }}">{{ found_entry.title }}</a></li>
+        {% endfor %}
     </ul>
+    </div>
 {% endblock %}

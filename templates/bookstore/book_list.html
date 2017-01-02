@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 {% load staticfiles %}
+{% load i18n %}
+{% load static %}
+{% load ratings %}
+{% load tagging_tags %}
 
 {% block title %}
     Books
@@ -11,437 +15,72 @@
         <div class="container">
             <div class="row">
                 <!--SIDEBAR START-->
-                <div class="col-md-3 sidebar hide-on-med-down">
-                    <!--SEARCH WIDGET START-->
-                    <div class="widget widget-search">
-                        <h2>Search</h2>
-                        <div class="input-container">
-                            <input type="text" placeholder="Enter Keyword">
-                            <i class="fa fa-search"></i>
-                        </div>
-                    </div>
-                    <!--SEARCH WIDGET END-->
-                    <!--PRICE FILTER WIDGET(YEAR OF PUBLICATION FILTER WIDGET) START-->
-                    <div class="widget widget-price-filter">
-                        <h2>Filter by Pub Year</h2>
-                        <b>1970</b>
-                        <b class="pull-right">2017</b>
-                        <input id="ex2" type="text" class="span2" value="" data-slider-min="1970" data-slider-max="2017"
-                               data-slider-step="1" data-slider-value="[1970,1990]"/>
-                        <a href="#" class="filter">Filter</a>
-                    </div>
-                    <!--PRICE FILTER WIDGET(YEAR OF PUBLICATION FILTER WIDGET) END-->
-                    <!--MOST RECENT(NEW ARRIVAL) WIDGET START-->
-                    <div class="widget widget-new-arrival">
-                        <h2>MOST RECENT</h2>
-                        <ul class="bxslider">
-                            <li>
-                                <div class="new-arrival">
-                                    <div class="kode-thumb">
-                                        <a href="#"><img src="images/new-arrival2.png" alt=""></a>
-                                    </div>
-                                    <div class="kode-text">
-                                        <h3>consetetur sadip scing</h3>
-                                        <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-                                    </div>
-                                </div>
-                                <div class="new-arrival">
-                                    <div class="kode-thumb">
-                                        <a href="#"><img src="images/new-arrival1.png" alt=""></a>
-                                    </div>
-                                    <div class="kode-text">
-                                        <h3>consetetur sadip scing</h3>
-                                        <p>Sed diam nonumy eirmod tempor invidunt ut labore et</p>
-                                    </div>
-                                </div>
-                                <div class="new-arrival">
-                                    <div class="kode-thumb">
-                                        <a href="#"><img src="images/new-arrival3.png" alt=""></a>
-                                    </div>
-                                    <div class="kode-text">
-                                        <h3>consetetur sadip scing</h3>
-                                        <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="new-arrival">
-                                    <div class="kode-thumb">
-                                        <a href="#"><img src="images/new-arrival3.png" alt=""></a>
-                                    </div>
-                                    <div class="kode-text">
-                                        <h3>consetetur sadip scing</h3>
-                                        <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-                                    </div>
-                                </div>
-                                <div class="new-arrival">
-                                    <div class="kode-thumb">
-                                        <a href="#"><img src="images/new-arrival2.png" alt=""></a>
-                                    </div>
-                                    <div class="kode-text">
-                                        <h3>consetetur sadip scing</h3>
-                                        <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-                                    </div>
-                                </div>
-                                <div class="new-arrival">
-                                    <div class="kode-thumb">
-                                        <a href="#"><img src="images/new-arrival1.png" alt=""></a>
-                                    </div>
-                                    <div class="kode-text">
-                                        <h3>consetetur sadip scing</h3>
-                                        <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--MOST RECENT(NEW ARRIVAL) WIDGET END-->
-                    <!--CATEGORY WIDGET START-->
-                    <div class="widget widget-categories">
-                        <h2>Categories</h2>
-                        <ul>
-                            <li><a href="#">Photoshop</a></li>
-                            <li><a href="#">web/Graphic Design</a></li>
-                            <li><a href="#">Mobile Development</a></li>
-                            <li><a href="#">Video Editing</a></li>
-                            <li><a href="#">Photoshop</a></li>
-                            <li><a href="#">web/Graphic Design</a></li>
-                            <li><a href="#">Mobile Development</a></li>
-                            <li><a href="#">Video Editing</a></li>
-                        </ul>
-                    </div>
-                    <!--CATEGORY WIDGET END-->
-                    <!--MOST DOWNLOADED/MOST RATED(NEW ARRIVAL) WIDGET START-->
-                    <div class="widget widget-new-arrival">
-                        <h2>Most Downloaded</h2>
-                        <ul>
-                            <li>
-                                <div class="new-arrival">
-                                    <div class="kode-thumb">
-                                        <a href="#"><img src="images/new-arrival1.png" alt=""></a>
-                                    </div>
-                                    <div class="kode-text">
-                                        <h3>consetetur sadip scing</h3>
-                                        <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="new-arrival">
-                                    <div class="kode-thumb">
-                                        <a href="#"><img src="images/new-arrival2.png" alt=""></a>
-                                    </div>
-                                    <div class="kode-text">
-                                        <h3>consetetur sadip scing</h3>
-                                        <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="new-arrival">
-                                    <div class="kode-thumb">
-                                        <a href="#"><img src="images/new-arrival3.png" alt=""></a>
-                                    </div>
-                                    <div class="kode-text">
-                                        <h3>consetetur sadip scing</h3>
-                                        <p>Sed diam nonumy eirmod tempor invidunt ut labore et dolore</p>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--MOST DOWNLOADED/MOST RATED(NEW ARRIVAL) WIDGET END-->
-                </div>
+                {% include 'sidebar.html' %}
                 <!--SIDEBAR END-->
                 <!--MAIN CONTENT START-->
                 <div class="col-md-9">
+                    {% if books %}
                     <div class="row">
+                    {% for book in books %}
+                        {% if book.is_public == True %}
                         <!--PRODUCT GRID START-->
                         <div class="col-md-4 col-sm-6">
                             <div class="best-seller-pro">
                                 <figure>
-                                    <img src="images/book5.png" alt="">
+                                    <img src="{{ MEDIA_URL }}{{ book.cover_image }}" alt="">
                                 </figure>
                                 <div class="kode-text">
-                                    <h3>PENDRAGON</h3>
+                                    <h3>{{ book.title }}</h3>
                                 </div>
                                 <div class="kode-caption">
-                                    <h3>PENDRAGON Dr.Machale</h3>
+                                    <h3>{{ book.title }}</h3>
                                     <div class="rating">
                                         <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
                                     </div>
-                                    <p>Dr.Machale</p>
-                                    <p class="kode-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        Lorem ipsum dolor sit amet, consectetur adi 120word
-                                    </p>
-                                    <a href="book-detail.html" class="add-to-cart">View Details</a>
+                                    {% for author in book.authors.all %}
+                                        <p>{{ author.first_name }} {{ author.last_name }}</p>
+                                    {% endfor %}
+                                    <p class="price">${{ book.price }}</p>
+                                    <a href="/bookstore/book/{{ book.slug }}" class="add-to-cart">View Details</a>
                                 </div>
                             </div>
                         </div>
                         <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img src="images/book6.png" alt="">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">Bridget Jones</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>Mad About the Boy</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>Helen Fielding</p>
-                                    <p class="kode-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        Lorem ipsum dolor sit amet, consectetur adi 120word
-                                    </p>
-                                    <a href="#" class="add-to-cart">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img src="images/book7.png" alt="">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">Burnt Siena</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>Art History Mystery</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>Sara Wisseman</p>
-                                    <p class="kode-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        Lorem ipsum dolor sit amet, consectetur adi 120word
-                                    </p>
-                                    <a href="#" class="add-to-cart">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img src="images/book8.png" alt="">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">Chrysalis</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>The Brave Girl</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>William S.</p>
-                                    <p class="kode-text">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                                        Lorem ipsum dolor sit amet, consectetur adi 120word
-                                    </p>
-                                    <a href="#" class="add-to-cart">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img alt="" src="images/book10.png">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">The Winning</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>The Winning Story</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>Mind Set</p>
-                                    <p class="price">$447.75</p>
-                                    <a class="add-to-cart" href="#">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img alt="" src="images/book2.png">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">Dead Water</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>Dead Water in the Sea</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>Ann Grannger</p>
-                                    <p class="price">$777.75</p>
-                                    <a class="add-to-cart" href="#">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img alt="" src="images/book3.png">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">The Fault In our Stars</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>Paper Towns</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>Daniel Abraham</p>
-                                    <p class="price">$770.75</p>
-                                    <a class="add-to-cart" href="#">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img alt="" src="images/book4.png">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">The Ruby Of Egypt</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>The Ruby Of Egypt</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>Cat Howard</p>
-                                    <p class="price">$996.75</p>
-                                    <a class="add-to-cart" href="#">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img alt="" src="images/book5.png">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">Fableheaven</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>Fableheaven The Master</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>Brandon Hall</p>
-                                    <p class="price">$542.75</p>
-                                    <a class="add-to-cart" href="#">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img alt="" src="images/book6.png">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">Star Trek</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>Star Trek Course</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>DisAvowed</p>
-                                    <p class="price">$821.75</p>
-                                    <a class="add-to-cart" href="#">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img alt="" src="images/book7.png">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">City Of Bones</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>City Of Bones Lies here</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>Cassandra Clare</p>
-                                    <p class="price">$362.75</p>
-                                    <a class="add-to-cart" href="#">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
-                        <!--PRODUCT GRID START-->
-                        <div class="col-md-4 col-sm-6">
-                            <div class="best-seller-pro">
-                                <figure>
-                                    <img alt="" src="images/book8.png">
-                                </figure>
-                                <div class="kode-text">
-                                    <h3><a href="#">Annette Blair</a></h3>
-                                </div>
-                                <div class="kode-caption">
-                                    <h3>Annette Blair The Maker</h3>
-                                    <div class="rating">
-                                        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                    </div>
-                                    <p>Vampire Dragon</p>
-                                    <p class="price">$599.75</p>
-                                    <a class="add-to-cart" href="#">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!--PRODUCT GRID END-->
+                        {% endif %}
+                    {% endfor %}
                     </div>
                     <!--PAGINATION START-->
                     <nav>
                         <ul class="pagination">
+                            {% if books.has_previous %}
                             <li>
-                                <a href="#" aria-label="Previous">
+                                <a href="?page={{ books.previous_page_number }}" aria-label="Previous">
                                     <span aria-hidden="true">&laquo;</span>
                                 </a>
                             </li>
-                            <li><a href="#">1</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">5</a></li>
+                            {% endif %}
+                            {% for i in books.paginator.page_range %}
+                                {% if books.number == i %}
+                                    <li class="active"><a href="#">{{ i }}</a></li>
+                                {% else %}
+                                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+                            {% if books.has_next %}
                             <li>
-                                <a href="#" aria-label="Next">
+                                <a href="?page={{ posts.next_page_number }}" aria-label="Next">
                                     <span aria-hidden="true">&raquo;</span>
                                 </a>
                             </li>
+                            {% endif %}
                         </ul>
                     </nav>
                     <!--PAGINATION END-->
+                    {% else %}
+                        <p>
+                            There are no Post Currently, Please check back later.
+                        </p>
+                    {% endif %}
                 </div>
                 <!--MAIN CONTENT END-->
             </div>

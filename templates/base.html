@@ -73,12 +73,11 @@
 </div>
 <!--WRAPPER END-->
 
-{% comment %}
 <!-- Modal -->
-    <!--include login modal-->
-    {% include 'common/loginmodal.html' %}
+    {% block review %}
+
+    {% endblock %}
 <!--MODAL END-->
-{% endcomment %}
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="{% static 'js/jquery.min.js' %}"></script>
