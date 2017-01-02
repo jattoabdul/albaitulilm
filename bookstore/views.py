@@ -8,6 +8,7 @@ from django.utils.translation import ugettext as _, ugettext_noop as _noop
 from bookstore.search import *
 from bookstore.forms import *
 
+
 # Create your views here.
 # view_book_list also index view - home view
 def index(request):
