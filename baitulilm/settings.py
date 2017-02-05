@@ -45,11 +45,12 @@ INSTALLED_APPS = [
     'mptt',
     'tagging',
     'taggit',
+    # 'zinnia_bootstrap',
     'ckeditor',
     'ckeditor_uploader',
-    'zinnia',
+    # 'zinnia',
     'sorl.thumbnail',
-    'zinnia_ckeditor',
+    # 'zinnia_ckeditor',
     'star_ratings',
     'bookstore',
     'django_feedparser',
@@ -81,8 +82,13 @@ TEMPLATES = [
                 'django.template.context_processors.i18n',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'zinnia.context_processors.version',  # Optional
+                # 'zinnia.context_processors.version',  # Optional
             ],
+            # 'loaders': [
+            #     'app_namespace.Loader',
+            #     'django.template.loaders.filesystem.Loader',
+            #     'django.template.loaders.app_directories.Loader',
+            # ],
         },
     },
 ]
@@ -206,24 +212,24 @@ CKEDITOR_CONFIGS = {
         'width': 1000,
         'extraPlugins': 'codesnippet',
     },
-    'zinnia-content': {
-        'toolbar_Zinnia': [
-            ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],
-            ['Undo', 'Redo'],
-            ['Scayt'],
-            ['Link', 'Unlink', 'Anchor'],
-            ['Image', 'Table', 'HorizontalRule', 'SpecialChar'],
-            ['Source'],
-            ['Maximize'],
-            '/',
-            ['Bold', 'Italic', 'Underline', 'Strike',
-             'Subscript', 'Superscript', '-', 'RemoveFormat'],
-            ['NumberedList', 'BulletedList', '-',
-             'Outdent', 'Indent', '-', 'Blockquote'],
-            ['Styles', 'Format'],
-        ],
-        'toolbar': 'Zinnia',
-    },
+    # 'zinnia-content': {
+    #     'toolbar_Zinnia': [
+    #         ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord'],
+    #         ['Undo', 'Redo'],
+    #         ['Scayt'],
+    #         ['Link', 'Unlink', 'Anchor'],
+    #         ['Image', 'Table', 'HorizontalRule', 'SpecialChar'],
+    #         ['Source'],
+    #         ['Maximize'],
+    #         '/',
+    #         ['Bold', 'Italic', 'Underline', 'Strike',
+    #          'Subscript', 'Superscript', '-', 'RemoveFormat'],
+    #         ['NumberedList', 'BulletedList', '-',
+    #          'Outdent', 'Indent', '-', 'Blockquote'],
+    #         ['Styles', 'Format'],
+    #     ],
+    #     'toolbar': 'Zinnia',
+    # },
 }
 
 # setting for ckeditor upload file path

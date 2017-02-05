@@ -1,5 +1,8 @@
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+import os
+from django.http import Http404
 from bookstore.forms import ContactForm
+from django.utils.encoding import smart_str
 from django.shortcuts import render, get_object_or_404, redirect, render_to_response, HttpResponse, HttpResponseRedirect
 from django.core.mail import send_mail
 from django.conf import settings
@@ -7,6 +10,7 @@ from bookstore.models import *
 from django.utils.translation import ugettext as _, ugettext_noop as _noop
 from bookstore.search import *
 from bookstore.forms import *
+from django.http import HttpResponse
 
 
 # Create your views here.
@@ -65,6 +69,28 @@ def view_book_detail(request, slug):
                     'most_recent_books': most_recent_books, 'most_recent_books_2': most_recent_books_2,
                     'most_downloaded_books': most_downloaded_books, 'tags': tags, 'form': form}
     return render(request, "bookstore/book_detail.html", context_dict)
+
+
+# def download_book(request, slug):
+#     book = Book.objects.get(slug=slug)
+#     path_to_file = book.upload.path
+#
+#     response = HttpResponse(content_type='application/force-download')
+#     response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(book.title)
+#     response['X-Sendfile'] = smart_str(path_to_file)
+#     return response
+
+
+def download_book(request, path):
+    file_path = os.path.join(settings.MEDIA_ROOT, path)
+    if os.path.exists(file_path):
+        with open(file_path, 'rb') as fh:
+            response = HttpResponse(fh.read(), content_type="application/force-download")
+            response['Content-Disposition'] = 'attachment; filename=' + os.path.basename(file_path)
+            response['X-Sendfile'] = smart_str(file_path)
+            return response
+    else:
+        raise Http404
 
 
 # List of views to create

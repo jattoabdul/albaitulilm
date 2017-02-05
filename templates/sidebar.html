@@ -37,7 +37,7 @@
                                     {% if most_recent_book.is_public == True %}
                                     <div class="new-arrival">
                                         <div class="kode-thumb">
-                                            <a href="/book/{{ most_recent_book.slug }}">
+                                            <a href="/bookstore/book/{{ most_recent_book.slug }}">
                                             <img src="{{ MEDIA_URL }}{{ most_recent_book.cover_image }}" alt="">
                                             </a>
                                         </div>
@@ -56,7 +56,7 @@
                                     {% if most_recent_book_2.is_public == True %}
                                     <div class="new-arrival">
                                         <div class="kode-thumb">
-                                            <a href="/book/{{ most_recent_book_2.slug }}">
+                                            <a href="/bookstore/book/{{ most_recent_book_2.slug }}">
                                             <img src="{{ MEDIA_URL }}{{ most_recent_book_2.cover_image }}" alt="">
                                             </a>
                                         </div>
@@ -100,7 +100,7 @@
                                    {% if most_downloaded_book.is_public == True %}
                                    <div class="new-arrival">
                                         <div class="kode-thumb">
-                                            <a href="/book/{{ most_downloaded_book.slug }}">
+                                            <a href="/bookstore/book/{{ most_downloaded_book.slug }}">
                                                 <img src="{{ MEDIA_URL }}{{ most_downloaded_book.cover_image }}" alt="">
                                             </a>
                                         </div>

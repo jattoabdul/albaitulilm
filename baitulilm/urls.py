@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^contact/', bookstore_views.contact, name='contact'),
     url(r'^search/', bookstore_views.search, name='searchresult'),
     url(r'^bookstore/', include('bookstore.urls')),
-    url(r'^weblog/', include('zinnia.urls')),
+    # url(r'^weblog/', include('zinnia.urls')),
     url(r'^comments/', include('django_comments.urls')),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
     url(r'^jet/', include('jet.urls', 'jet')),  # Django JET URLS
