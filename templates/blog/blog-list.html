@@ -25,14 +25,13 @@
                     <div class="widget widget-categories">
                         <h2><a href="blog-category.html">Categories</a></h2>
                         <ul>
-                            <li><a href="blog-category.html">Photoshop</a></li>
-                            <li><a href="#">web/Graphic Design</a></li>
-                            <li><a href="#">Mobile Development</a></li>
-                            <li><a href="#">Video Editing</a></li>
-                            <li><a href="#">Photoshop</a></li>
-                            <li><a href="#">web/Graphic Design</a></li>
-                            <li><a href="#">Mobile Development</a></li>
-                            <li><a href="#">Video Editing</a></li>
+                            {% if categories %}
+                                {% for category in categories %}
+                                    <li><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></li>
+                                {% endfor %}
+                            {% else %}
+                                <li><a href="/bookstore/blog/">No categories</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                     <!--CATEGORY WIDGET END-->
@@ -56,36 +55,33 @@
                     <!--SUBSCRIBE WIDGET START-->
                     <!--LATEST POST START-->
                     <div class="widget widget-latest-post">
-                        <h5>Lates Posts</h5>
+                        <h5>Latest Posts</h5>
+                        {% if posts %}
                         <ul>
-                            <li>
-                                <div class="kode-thumb">
-                                    <a href="#"><img src="images/post-avaitar.png" alt=""></a>
-                                </div>
-                                <div class="kode-text">
-                                    <h4>Lorem ipsum dolorsit amet adipiscing </h4>
-                                    <p>25 December, 2015</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="kode-thumb">
-                                    <a href="#"><img src="images/post-avaitar.png" alt=""></a>
-                                </div>
-                                <div class="kode-text">
-                                    <h4>Lorem ipsum dolorsit amet adipiscing </h4>
-                                    <p>25 December, 2015</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="kode-thumb">
-                                    <a href="#"><img src="images/post-avaitar.png" alt=""></a>
-                                </div>
-                                <div class="kode-text">
-                                    <h4>Lorem ipsum dolorsit amet adipiscing </h4>
-                                    <p>25 December, 2015</p>
-                                </div>
-                            </li>
+                            {% for post in posts %}
+                                {% if post.published == True %}
+                                    <li>
+                                        <div class="kode-thumb">
+                                            <a href="{{ post.get_absolute_url }}"><img src="{{ post.post_image.url }}" alt=""></a>
+                                        </div>
+                                        <div class="kode-text">
+                                            <h4>{{ post.title }}</h4>
+                                            <p>{{ post.date }}</p>
+                                        </div>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
                         </ul>
+                        {% else %}
+                            <ul>
+                                <li>
+                                    <div class="kode-text">
+                                        <h4>No Post Yet </h4>
+                                        <p>Day Month, Year</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        {% endif %}
                     </div>
                     <!--LATEST POST END-->
                     <!--INSTAGRAM WIDGET START-->

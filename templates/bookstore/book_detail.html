@@ -62,7 +62,7 @@
                                         <p>Book ISBN: {{ book.isbn }}</p>
                                         <p>Book ID: {{ book.id }}</p>
                                     </div>
-                                    <a href="/bookstore/download/{{ book.upload.path }}" class="add-to-cart">Download</a>
+                                    <a href="/bookstore/download/{{ book.upload.path | urlencode }}" class="add-to-cart">Download</a>
                                     <a href="#" class="add-to-cart" data-toggle="modal" data-target="#myModal">
                                         Add A Review
                                     </a>

@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     # 'zinnia_ckeditor',
     'star_ratings',
     'bookstore',
+    'blog',
     'django_feedparser',
 ]
 

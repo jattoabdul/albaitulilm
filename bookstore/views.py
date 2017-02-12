@@ -71,22 +71,12 @@ def view_book_detail(request, slug):
     return render(request, "bookstore/book_detail.html", context_dict)
 
 
-# def download_book(request, slug):
-#     book = Book.objects.get(slug=slug)
-#     path_to_file = book.upload.path
-#
-#     response = HttpResponse(content_type='application/force-download')
-#     response['Content-Disposition'] = 'attachment; filename=%s' % smart_str(book.title)
-#     response['X-Sendfile'] = smart_str(path_to_file)
-#     return response
-
-
 def download_book(request, path):
     file_path = os.path.join(settings.MEDIA_ROOT, path)
     if os.path.exists(file_path):
         with open(file_path, 'rb') as fh:
             response = HttpResponse(fh.read(), content_type="application/force-download")
-            response['Content-Disposition'] = 'attachment; filename=' + os.path.basename(file_path)
+            response['Content-Disposition'] = 'inline; filename=' + os.path.basename(file_path)
             response['X-Sendfile'] = smart_str(file_path)
             return response
     else:
