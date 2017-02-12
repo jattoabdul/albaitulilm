@@ -9,6 +9,8 @@ out
 gen
 .gitignore
 baitulilm/__pycache__/
+myvenv
+db.sqlite3
 baitulilm/static/admin/fonts/
 baitulilm/static/admin/img/
 baitulilm/static/admin/js/vendor/
